@@ -1,6 +1,9 @@
-package src;
+package src.key;
 
 import java.util.*;
+import src.caractere.tabCaractere;
+import src.menu.Chiffrement;
+import src.menu.Dechiffrement;
 
 public class extraireCle {
 

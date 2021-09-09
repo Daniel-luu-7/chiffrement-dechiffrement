@@ -1,6 +1,8 @@
-package src;
+package src.menu;
 
 import java.util.Scanner;
+import src.caractere.tabCaractere;
+import src.key.GenerationFichierCle;
 
 public class Menu extends Thread {
 

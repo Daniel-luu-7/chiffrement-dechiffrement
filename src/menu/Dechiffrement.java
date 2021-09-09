@@ -1,4 +1,4 @@
-package src;
+package src.menu;
 
 import java.io.BufferedReader;
 import java.io.File;

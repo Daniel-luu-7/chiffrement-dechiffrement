@@ -1,4 +1,4 @@
-package src;
+package src.key;
 
 import java.io.File;
 import java.io.FileWriter;
