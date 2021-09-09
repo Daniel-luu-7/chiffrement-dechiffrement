@@ -1,30 +1,29 @@
-
 public class tabCaractere{
 
 //ATTRIBUTS
 	public char tableauCaratere[];
 	
-	
 //CONSTRUCTEURS
 	public tabCaractere(){
 		this.tableauCaratere = new char[154];
-		}
+	}
 
-//METHODES
-		
+//METHODES	
 	public void remplirTableauCaractere(){
-		
 		char c;
 	
 		//Remplir le tableau avec des lettres		
 		for(int i=0; i<=153; i++){
 			int j=i+32;	//lettre A Ã  Z correspond au code ASCII de 97 Ã  122
 			c = (char) j;
+
 			this.tableauCaratere[i]=c;
 			j++;
-			}
-		this.tableauCaratere[150]='é';
-		this.tableauCaratere[151]='à';
+		}
+
+		this.tableauCaratere[150]='ï¿½';
+		this.tableauCaratere[151]='ï¿½';
+
 		System.out.println(this.tableauCaratere);
 		/*
 		
@@ -45,5 +44,5 @@ public class tabCaractere{
 	
 	public int taille(){
 		return this.tableauCaratere.length;
-		}
+	}
 }

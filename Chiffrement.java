@@ -5,28 +5,27 @@ import java.io.FileWriter;
 import java.util.Random;
 
 public class Chiffrement{
-
+	
 //ATTRIBUT
 	private int cleChiffrement;
 	private int K_nbr;
 	private int NbCle;
 	
-	
 //CONSTRUCTEUR
 
 	public Chiffrement(){}
-	
+
 	public Chiffrement(int NbCle){
-			this.K_nbr = 0;
-			this.cleChiffrement = 0;
-			this.NbCle=NbCle;
-			}
+		this.K_nbr = 0;
+		this.cleChiffrement = 0;
+		this.NbCle=NbCle;
+	}
 	
 //METHODE
 
 	public int getK(){
 		return this.K_nbr;
-		}
+	}
 
 	public int getCleChiffrement(){
 		return this.cleChiffrement;
@@ -44,29 +43,24 @@ public class Chiffrement{
 		this.cleChiffrement = cleChiffrement;
 	}
 		
-	
-	
-	
 	public void K_nbr(){
 		Random rand = new Random();
 		int K_nbr = rand.nextInt(this.getNbCle()+1);
 			
 		while(K_nbr == 0){
-		K_nbr = rand.nextInt(this.getNbCle()+1); //Entre 0 et 100
+			K_nbr = rand.nextInt(this.getNbCle()+1); //Entre 0 et 100
 		}
 		
 		this.setK(K_nbr);
-		}
+	}
 	
 	public void selectionCle(){
-		
 		String str = "";
 	
 		File f = new File("../Keys.txt");
 		FileReader fr;
 		
 		try{
-		
 			fr = new FileReader(f);
 			BufferedReader bw = new BufferedReader(fr);
 		
@@ -75,15 +69,14 @@ public class Chiffrement{
 			
 			bw.close();
 			fr.close();
-			
-			}
+		}
 		  
 		catch (Exception e) {}
 					  
 		this.setCleChiffrement(Integer.parseInt(str.substring((this.getK()*2)-2,this.getK()*2)));
-		}
+	}
+
 	public String concatenuationK(int K_nbr){
-		
 		String Kconca = "";
 		
 		if(K_nbr<10)
@@ -92,15 +85,17 @@ public class Chiffrement{
 		else if(K_nbr>10 && K_nbr<100)
 			Kconca = "0"+ K_nbr;
 					
-		return Kconca;
-		
+		return Kconca;	
 	}
+
 	public int indiceCaractere(char c, char[] tabCaractere){
 		for(int i=0; i<tabCaractere.length; i++)
 			if(c == tabCaractere[i])
 				return i;
+
 		System.out.println(c);
-		System.out.println("Erreur ! Caractere non trouvé !");
+		System.out.println("Erreur ! Caractere non trouvÃ© !");
+
 		return 0;
 	}
 
@@ -124,13 +119,11 @@ public class Chiffrement{
 		FileWriter fw;
 		String str;
 		char c;
-		
-		
+				
 		K_nbr();
 		this.selectionCle();
 		
 		try{
-		
 			fr = new FileReader(f1);
 			fw = new FileWriter(f2);
 			
@@ -145,16 +138,12 @@ public class Chiffrement{
 				}
 			
 			fw.write(this.concatenuationK(K_nbr));
-
 			
 			fw.close();
 			bw.close();
 			fr.close();
-			
-			}
+		}
 		  
-		catch (Exception e) {}
-				
+		catch (Exception e) {}		
 	}
-
 }

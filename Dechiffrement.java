@@ -3,12 +3,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-
 public class Dechiffrement extends Chiffrement{
-		
+
 //CONSTRUCTEUR
 	public Dechiffrement(){
-	super();
+		super();
 	}
 
 //METHODE				
@@ -24,14 +23,12 @@ public class Dechiffrement extends Chiffrement{
 		return cC;
 	}
 	
-	public void lireK_nbr(){
-		
+	public void lireK_nbr(){		
 		File f = new File("../Chiffre.txt");
 		FileReader fr;
 		String str;
 				
-		try{
-			
+		try{		
 			fr = new FileReader(f);
 			BufferedReader br = new BufferedReader(fr);
 			
@@ -39,17 +36,13 @@ public class Dechiffrement extends Chiffrement{
 			
 			fr.close();
 			
-			this.setK(Integer.parseInt(str.substring(str.length()-3,str.length())));
-						
+			this.setK(Integer.parseInt(str.substring(str.length()-3,str.length())));						
 		}
 		
-		catch(Exception e){}
-		
-		
+		catch(Exception e){}		
 	}
 			
-	public void dechiffrementFichier(char[] tabCaractere){
-		
+	public void dechiffrementFichier(char[] tabCaractere){		
 		File f1 = new File("../Chiffre.txt");
 		File f2 = new File("../Resultat.txt");
 		FileReader fr;
@@ -60,8 +53,7 @@ public class Dechiffrement extends Chiffrement{
 		this.lireK_nbr();
 		this.selectionCle();
 		
-		try{
-		
+		try{		
 			fr = new FileReader(f1);
 			fw = new FileWriter(f2);
 			
@@ -77,17 +69,15 @@ public class Dechiffrement extends Chiffrement{
 			
 			fw.close();
 			br.close();
-			fr.close();
-			
-			}
+			fr.close();			
+		}
 		  
 		catch (Exception e) {}
 		
 		compareFichier("../Resultat.txt", "../Clair.txt");
 	}
 	
-	public void compareFichier(String Resultat, String Clair){
-		
+	public void compareFichier(String Resultat, String Clair){	
 		File fR = new File(Resultat);
 		File fC = new File(Clair);
 		FileReader frR;
@@ -95,8 +85,7 @@ public class Dechiffrement extends Chiffrement{
 		String strR;
 		String strC;
 		
-		try{
-		
+		try{	
 			frR = new FileReader(fR);
 			frC = new FileReader(fC);
 			
@@ -107,32 +96,28 @@ public class Dechiffrement extends Chiffrement{
 			strR = bwR.readLine();
 			strC = bwC.readLine();
 					
-			for(int i=0; i<strC.length(); i++){
-				
+			for(int i=0; i<strC.length(); i++){			
 				if(strR.charAt(i) != strC.charAt(i)){
 					System.out.println(strR.charAt(i));
 					System.out.println(strC.charAt(i));
 					System.out.println("Fichier non identique !");
+
 					break;
-					
-					}
+				}
 				
 				else if(strR.charAt(i) == strC.charAt(i) && i==(strC.length()-1)){
 					System.out.println("Resultat.txt : " + strR);
 					System.out.println("Clair.txt : " + strC);
 					System.out.println("\nFichier identique !");
-					}
 				}
+			}
 					
 			bwR.close();
 			bwC.close();
 			frR.close();
 			frC.close();
-			}
+		}
 		  
-		catch (Exception e) {}
-					  
+		catch (Exception e) {}			  
 	}
-
-	
 }
