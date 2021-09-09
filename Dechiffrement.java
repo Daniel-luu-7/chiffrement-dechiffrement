@@ -23,7 +23,7 @@ public class Dechiffrement extends Chiffrement {
   }
 
   public void lireK_nbr() {
-    File f = new File("../Chiffre.txt");
+    File f = new File("./Chiffre.txt");
     FileReader fr;
     String str;
 
@@ -42,8 +42,8 @@ public class Dechiffrement extends Chiffrement {
   }
 
   public void dechiffrementFichier(char[] tabCaractere) {
-    File f1 = new File("../Chiffre.txt");
-    File f2 = new File("../Resultat.txt");
+    File f1 = new File("./Chiffre.txt");
+    File f2 = new File("./Resultat.txt");
     FileReader fr;
     FileWriter fw;
     String str;
@@ -71,7 +71,7 @@ public class Dechiffrement extends Chiffrement {
       fr.close();
     } catch (Exception e) {}
 
-    compareFichier("../Resultat.txt", "../Clair.txt");
+    compareFichier("./Resultat.txt", "./Clair.txt");
   }
 
   public void compareFichier(String Resultat, String Clair) {

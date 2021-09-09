@@ -44,7 +44,7 @@ public class Cle {
     int K_nbr = K_nbr();
     String str = "";
 
-    File f = new File("../Keys.txt");
+    File f = new File("./Keys.txt");
     FileReader fr;
 
     try {

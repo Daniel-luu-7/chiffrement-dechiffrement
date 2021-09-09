@@ -18,7 +18,7 @@ public class GenerationFichierCle {
   }
 
   public void Genere() {
-    File f = new File("../Keys.txt");
+    File f = new File("./Keys.txt");
     FileWriter fw;
     String cle;
 

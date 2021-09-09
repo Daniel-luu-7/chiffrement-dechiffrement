@@ -8,17 +8,15 @@ public class Menu extends Thread {
     System.out.println("*************************");
     System.out.println("*       Bienvenue       *");
     System.out.println("*   dans le programme   *");
-    System.out.println("* cryptage et decryptage*");
+    System.out.println("* cryptage et décryptage*");
     System.out.println("*************************\n");
 
     tabCaractere t = new tabCaractere();
     t.remplirTableauCaractere();
 
-    System.out.println("Nombre de cle a generer : ");
+    System.out.println("Nombre de clé à generer : ");
     Scanner sc = new Scanner(System.in);
     int NbCle = sc.nextInt();
-
-    sc.close();
 
     GenerationFichierCle G = new GenerationFichierCle(NbCle);
     G.Genere();
@@ -61,7 +59,7 @@ public class Menu extends Thread {
         Thread.sleep(3000);
         break;
       case 3:
-        System.out.println("Arret du programme !");
+        System.out.println("Arrêt du programme !");
         System.exit(0);
         break;
       default:

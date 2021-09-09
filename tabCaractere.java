@@ -21,9 +21,7 @@ public class tabCaractere {
       j++;
     }
 
-    this.tableauCaratere[150] = '�';
-    this.tableauCaratere[151] = '�';
-
+    System.out.println("Tableau de caractères");
     System.out.println(this.tableauCaratere);
   }
 

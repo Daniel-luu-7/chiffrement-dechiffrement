@@ -55,7 +55,7 @@ public class Chiffrement {
   public void selectionCle() {
     String str = "";
 
-    File f = new File("../Keys.txt");
+    File f = new File("./Keys.txt");
     FileReader fr;
 
     try {
@@ -107,8 +107,8 @@ public class Chiffrement {
   }
 
   public void chiffrementFichier(char[] tabCaractere) {
-    File f1 = new File("../Clair.txt");
-    File f2 = new File("../Chiffre.txt");
+    File f1 = new File("./Clair.txt");
+    File f2 = new File("./Chiffre.txt");
     FileReader fr;
     FileWriter fw;
     String str;
