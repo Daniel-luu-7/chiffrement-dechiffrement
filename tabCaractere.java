@@ -25,21 +25,6 @@ public class tabCaractere {
     this.tableauCaratere[151] = '�';
 
     System.out.println(this.tableauCaratere);
-    /*
-		
-		//Remplir le tableau avec l'espace	
-		this.tableauCaratere[26]= ' ';
-		
-		
-		//Remplir le tableau avec des chiffres	
-		for(int i=27; i<=35; i++){
-			int j=i+22;	//lettre 0 à 9 correspond au code ASCII de 48 à 57
-			c = (char) j;
-			this.tableauCaratere[i]=c;
-			j++;
-			}
-		
-		this.tableauCaratere[36]= '0';*/
   }
 
   public int taille() {
